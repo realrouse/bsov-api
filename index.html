@@ -1,0 +1,96 @@
+<html>
+<head>
+<link rel="stylesheet" id="et-builder-googlefonts-cached-css" href="https://fonts.googleapis.com/css?family=Lato%3A100%2C100italic%2C300%2C300italic%2Cregular%2Citalic%2C700%2C700italic%2C900%2C900italic&amp;ver=5.9.3#038;subset=latin,latin-ext" type="text/css" media="all">
+<link rel="icon" type="image/x-icon" href="https://getwhackd.org/storage/2021/07/cropped-hans-1-32x32.png" sizes="32x32">
+<link rel="icon" type="image/x-icon" href="https://getwhackd.org/storage/2021/07/cropped-hans-1-192x192.png" sizes="192x192">
+<style>
+body {background-color: #140336;}
+h1, h2, h3, h4 {font-family:Lato; color:white; line-height:10pt; margin-top:30pt;}
+h5 {font-family:Lato; color:white;}
+p {font-family:Lato; font-size:10pt; color: #DFD9EB; line-height: 10pt;}
+a {color:#CD1F1F;}
+
+table { background-color:#230B53;  }
+td, tr {padding:3px;}}
+
+</style>
+</head>
+    <body>
+<center>
+<img src="https://getwhackd.org/storage/2021/07/logo-web-768x768.png" width="150px"></img>
+        <h1>
+            WHACKD APIs
+        </h1>
+        <hr>
+        <h3>
+            <a href="/api">main API</a>
+        </h3>
+        
+        <h3>
+            <a href="/circulating">Circulating Supply</a>
+        </h3>
+<h3>
+<a href="/circulating-text"> Circulating Supply - (plain text)</a>
+</h3>
+        <h3>
+WHACKD Liquidity Data
+	</h3>
+
+<table>
+<tr><td><center><h5>Uniswap Pools</h5></center></td></tr>
+<tr><td><p><a href="/liquidity-eth">WHACKD-ETH</a> (amount of ETH in pool)</p></td></tr>
+<tr><td><p><a href="/liquidity-whackd">WHACKD-ETH</a> (amount of WHACKD in pool)</p></td></tr>
+</table>       
+
+ 	<hr>
+
+
+
+
+<h3>How is WHACKD's Circulating Supply calculated?</h3>
+<p>Simple. Max Supply (1,000,000,000 WHACKD) - Burnt tokens = Circulating Supply.
+<br></br>Due to WHACKD's deflationary mechanism, the circulating supply will go lower as time passes and usage increases.</p>
+
+<h3>Please donate to keep me motivated to further develop these APIs and stats</h3>
+<p>This API was deployed by me, RealRouse.<br></br>
+Feel free to donate some WHACKD or ETH to my address at:<br></br>
+<b><a href="https://etherscan.io/tokenholdings?a=0xe5ee283ef4b9477cb27918a5e823b18ba7b227bf" target="_blank">0xE5EE283EF4b9477cb27918a5e823B18ba7b227bf</a></b></p>
+
+<br></br>
+<br></BR>
+<p>Curious about WHACKD? Visit the community-made website here:</p> <h5>
+            <a href="https://getwhackd.org/">WHACKD website</a>
+<p>Help develop this API-page at <a href="https://github.com/WHACKD-Token/WHACKD-api">Github</a></p>
+        </h5>
+
+</center>
+        <!-- <span id="percentFrozen18"></span> -->
+        
+        
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> -->
+<!--         
+        <script>
+            //frozen
+            let frozenURL18 = 'https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x26946adA5eCb57f3A1F91605050Ce45c482C9Eb1&address=0x19E6BF254aBf5ABC925ad72d32bac44C6c03d3a4&tag=latest&apikey=3WU7U7EIMED8U9AYRUNVSPPYGQ7CESGDDP';
+            let frozen = $.ajax({
+                url: frozenURL18,
+                method: "GET"
+            }).then(function (response) {
+                console.log("frozen",response.result)
+                return $("#percentFrozen18").html(response.result)
+            })
+
+
+            //price??
+            let circulatingURL18 = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoinsov&vs_currencies=usd';
+
+            let circulating = $.ajax({
+                url: circulatingURL18,
+                method: "GET"
+            }).then(function (response) {
+                console.log("price", response.bitcoinsov.usd)
+                // return $("#percentFrozen18").html(response.bitcoinsov.usd)
+            })
+      </script> -->
+    </body>
+</html>
