@@ -120,7 +120,7 @@ router.get('/circulating-text', (__, res) => {
 											const {result} = response.data
             const burn = supply - formatted(totalSupply)
             res.set('text/html').send(
-                formatted(tokensMinted) - burn - formatted(result).toString()
+                (formatted(tokensMinted) - burn - formatted(result)).toString()
             )
 })        
 })
