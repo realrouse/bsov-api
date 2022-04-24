@@ -44,14 +44,15 @@ router.get('/api', (__, res) => {
 										  
 										    const frozenURL18 = 'https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x26946adA5eCb57f3A1F91605050Ce45c482C9Eb1&address=0x19E6BF254aBf5ABC925ad72d32bac44C6c03d3a4&tag=latest&apikey=3WU7U7EIMED8U9AYRUNVSPPYGQ7CESGDDP';
     axios.get(frozenURL18).then(function (response) {
+											const {result} = response.data
                                                                                     const burn = supply - formatted(totalSupply)
                                                                                     res.send({
 											
                                                                                         name,
                                                                                         symbol,
-                                                                                        circulatingSupply: parse(tokensMinted) - burn - frozenURL18,
-                                                                                        circulatingSupplyFormatted: formatted(tokensMinted) - burn - formatted(frozenURL18),
-											TimelockedTokens: formatted(frozenURL18),
+                                                                                        circulatingSupply: parse(tokensMinted) - burn - result,
+                                                                                        circulatingSupplyFormatted: formatted(tokensMinted) - burn - formatted(result),
+											TimelockedTokens: formatted(result),
                                                                                         totalSupply: parse(bigSupply - burn),
                                                                                         totalSupplyFormatted: formatted(bigSupply - burn),
                                                                                         maxSupplyFormatted: supply, 
