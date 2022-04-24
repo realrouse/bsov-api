@@ -46,15 +46,16 @@ router.get('/api', (__, res) => {
     axios.get(frozenURL18).then(function (response) {
 											const {result} = response.data
                                                                                     const burn = supply - formatted(totalSupply)
+										    const bigBurn = bigSupply - parse(totalSupply)
                                                                                     res.send({
 											
                                                                                         name,
                                                                                         symbol,
-                                                                                        circulatingSupply: parse(tokensMinted) - burn - result,
+                                                                                        circulatingSupply: parse(tokensMinted) - bigBurn - result,
                                                                                         circulatingSupplyFormatted: formatted(tokensMinted) - burn - formatted(result),
-											TimelockedTokens: formatted(result),
-                                                                                        totalSupply: parse(bigSupply - burn),
-                                                                                        totalSupplyFormatted: formatted(bigSupply - burn),
+											TimelockedTokensFormatted: formatted(result),
+                                                                                        totalSupply: parse(bigSupply) - burn,
+                                                                                        totalSupplyFormatted: formatted(bigSupply) - burn,
                                                                                         maxSupplyFormatted: supply, 
 											tokensMinted: parse(tokensMinted),
                                                                                         tokensMintedFormatted: formatted(tokensMinted),
