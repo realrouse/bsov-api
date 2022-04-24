@@ -137,7 +137,8 @@ router.get('/circulating', (__, res) => {
             const burn = supply - formatted(totalSupply)
             res.send({
                 circulatingSupply: formatted(tokensMinted) - burn
-            })
+})            
+})
         })
     })
 });
