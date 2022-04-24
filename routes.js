@@ -21,7 +21,8 @@ module.exports = router;
 
 router.get('/api', (__, res) => {
     _.name().call((__, name) => { 
-        _.totalSupply().call((__, totalSupply) => { 
+        _.totalSupply().call((__, totalSupply) => {
+	 _._totalSupply().call((__, _totalSupply) => { 
             _.symbol().call((__, symbol) => { 
                 _.decimals().call((__, decimals) => { 
                     _._MINIMUM_TARGET().call((__, minimumTarget) => { 
@@ -48,7 +49,7 @@ router.get('/api', (__, res) => {
 											
                                                                                         name,
                                                                                         symbol,
-                                                                                        circulatingSupply: parse(tokensMinted) - burn - frozenURL18),
+                                                                                        circulatingSupply: parse(tokensMinted) - burn - frozenURL18,
                                                                                         circulatingSupplyFormatted: formatted(tokensMinted) - burn - formatted(frozenURL18),
 											TimelockedTokens: formatted(frozenURL18),
                                                                                         totalSupply: parse(bigSupply - burn),
@@ -80,6 +81,8 @@ router.get('/api', (__, res) => {
                                                                                         currentMiningRewardFormatted: formatted(currentMiningReward),
                                                                                         currentEthBlockNumber: block,
                                                                                         apiMainPage: "https://api.bsovtoken.com/"
+
+											})
                                                                                      })
 										   }) 
                                                                                 })
