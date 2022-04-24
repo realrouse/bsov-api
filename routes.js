@@ -42,13 +42,15 @@ router.get('/api', (__, res) => {
                                                                                 web3.eth.getBlockNumber((__, block) => {
                                                                                     const burn = supply - formatted(totalSupply)
                                                                                     res.send({
+											
                                                                                         name,
                                                                                         symbol,
                                                                                         circulatingSupply: parse(tokensMinted) - (bigSupply - parse(totalSupply)),
                                                                                         circulatingSupplyFormatted: formatted(tokensMinted) - burn,
-                                                                                        totalSupply: parse(totalSupply),
-                                                                                        totalSupplyFormatted: formatted(totalSupply),
-                                                                                        tokensMinted: parse(tokensMinted),
+                                                                                        totalSupply: parse(bigSupply - burn),
+                                                                                        totalSupplyFormatted: formatted(bigSupply - burn),
+                                                                                        maxSupplyFormatted: supply, 
+											tokensMinted: parse(tokensMinted),
                                                                                         tokensMintedFormatted: formatted(tokensMinted),
                                                                                         tokensBurned: bigSupply - parse(totalSupply),
                                                                                         tokensBurnedFormatted: burn,
