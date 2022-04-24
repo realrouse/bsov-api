@@ -49,9 +49,9 @@ router.get('/api', (__, res) => {
 											
                                                                                         name,
                                                                                         symbol,
-                                                                                       // circulatingSupply: parse(tokensMinted) - burn - frozenURL18,
-                                                                                      //  circulatingSupplyFormatted: formatted(tokensMinted) - burn - formatted(frozenURL18),
-											// TimelockedTokens: formatted(frozenURL18),
+                                                                                        circulatingSupply: parse(tokensMinted) - burn - frozenURL18,
+                                                                                        circulatingSupplyFormatted: formatted(tokensMinted) - burn - formatted(frozenURL18),
+											TimelockedTokens: formatted(frozenURL18),
                                                                                         totalSupply: parse(bigSupply - burn),
                                                                                         totalSupplyFormatted: formatted(bigSupply - burn),
                                                                                         maxSupplyFormatted: supply, 
