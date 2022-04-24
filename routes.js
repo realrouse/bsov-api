@@ -41,9 +41,9 @@ router.get('/api', (__, res) => {
                                                                         _.lastRewardEthBlockNumber().call((__, lastRewardEthBlockNumber) => { 
                                                                             _.getMiningReward().call((__, currentMiningReward) => { 
                                                                                 web3.eth.getBlockNumber((__, block) => {
-										   router.get('/frozen', (__, res) => {
-										 //   const frozenURL18 = 'https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x26946adA5eCb57f3A1F91605050Ce45c482C9Eb1&address=0x19E6BF254aBf5ABC925ad72d32bac44C6c03d3a4&tag=latest&apikey=3WU7U7EIMED8U9AYRUNVSPPYGQ7CESGDDP';
- //   axios.get(frozenURL18).then(function (response) {
+										  
+										    const frozenURL18 = 'https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x26946adA5eCb57f3A1F91605050Ce45c482C9Eb1&address=0x19E6BF254aBf5ABC925ad72d32bac44C6c03d3a4&tag=latest&apikey=3WU7U7EIMED8U9AYRUNVSPPYGQ7CESGDDP';
+    axios.get(frozenURL18).then(function (response) {
                                                                                     const burn = supply - formatted(totalSupply)
                                                                                     res.send({
 											
