@@ -73,7 +73,7 @@ router.get('/api', (__, res) => {
                                                                                         currentMiningReward: parse(currentMiningReward),
                                                                                         currentMiningRewardFormatted: formatted(currentMiningReward),
                                                                                         currentEthBlockNumber: block,
-                                                                                        apiMainPage: "https://bankscoin-api.herokuapp.com/"
+                                                                                        apiMainPage: "https://api.bsovtoken.com/"
                                                                                     }) 
                                                                                 })
                                                                             })
