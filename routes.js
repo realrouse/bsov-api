@@ -115,11 +115,15 @@ router.get('/api', (__, res) => {
 router.get('/circulating-text', (__, res) => {
     _.totalSupply().call((__, totalSupply) => { 
         _.tokensMinted().call((__, tokensMinted) => {
+    const frozenURL18 = 'https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x26946adA5eCb57f3A1F91605050Ce45c482C9Eb1&address=0x19E6BF254aBf5ABC925ad72d32bac44C6c03d3a4&tag=latest&apikey=3WU7U7EIMED8U9AYRUNVSPPYGQ7CESGDDP';
+    axios.get(frozenURL18).then(function (response) {
+											const {result} = response.data
             const burn = supply - formatted(totalSupply)
             res.set('text/html').send(
                 (formatted(tokensMinted) - burn).toString()
             )
-        })
+})        
+})
     })
 });
 
@@ -127,6 +131,9 @@ router.get('/circulating-text', (__, res) => {
 router.get('/circulating', (__, res) => {
     _.totalSupply().call((__, totalSupply) => { 
         _.tokensMinted().call((__, tokensMinted) => {
+    const frozenURL18 = 'https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x26946adA5eCb57f3A1F91605050Ce45c482C9Eb1&address=0x19E6BF254aBf5ABC925ad72d32bac44C6c03d3a4&tag=latest&apikey=3WU7U7EIMED8U9AYRUNVSPPYGQ7CESGDDP';
+    axios.get(frozenURL18).then(function (response) {
+											const {result} = response.data
             const burn = supply - formatted(totalSupply)
             res.send({
                 circulatingSupply: formatted(tokensMinted) - burn
