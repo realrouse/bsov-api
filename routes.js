@@ -149,7 +149,7 @@ router.get('/totalsupply-text', (__, res) => {
         _.tokensMinted().call((__, tokensMinted) => {
             const burn = supply - formatted(totalSupply)
             res.set('text/html').send(
-                formatted(tokensMinted) - burn.toString()
+                formatted(tokensMinted) - (burn).toString()
             )
         })
     })
