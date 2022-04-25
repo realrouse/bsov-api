@@ -56,6 +56,7 @@ router.get('/api', (__, res) => {
 											TimelockedTokensFormatted: formatted(result),
                                                                                         totalSupply: parse(tokensMinted) - bigBurn,
                                                                                         totalSupplyFormatted: formatted(tokensMinted) - burn,
+											maxTotalSupplyFormatted: formatted(totalSupply),
                                                                                         maxSupplyFormatted: supply, 
 											tokensMinted: parse(tokensMinted),
                                                                                         tokensMintedFormatted: formatted(tokensMinted),
